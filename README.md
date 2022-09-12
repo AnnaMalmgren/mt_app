@@ -4,5 +4,5 @@
 - [x] Add a form to enter new data
 - [x] Handle import of multiple data points
 
-install: yarn install
-start: yarn start
+install: yarn install  
+start: yarn start   
