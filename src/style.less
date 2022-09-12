@@ -1,6 +1,185 @@
 @import "~mt-ui/lib/style.less";
 
+@primary-color: #0275d8;
+@primary-color-lighter: lighten(@primary-color, 20%);
+@success-color: #c3f6d7;
+@success-color-dark: #88c09e;
+@danger-color: #f4c4c4;
+@danger-color-dark: #ba7c7c;
+
 .excel-dropzone__label {
   text-align: center;
   padding-top: 90px;
 }
+
+/* Modal */
+
+.modal-container {
+  position: fixed;
+  width: 300px;
+  max-height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 16px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  max-height: inherit;
+  border-radius: 16px;
+  border: lightgray solid 1px;
+  z-index: 10;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+  padding: 1em;
+  border-bottom: lightgray solid 0.5px;
+
+  .modal-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 80%;
+    width: 100%;
+    padding-bottom: 0.5em;
+    overflow-y: auto;
+  }
+
+  span {
+    padding-bottom: 0.25em;
+  }
+}
+
+/* TopScores */
+
+.highscore-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1em;
+  margin-top: 2em;
+}
+
+/* TopScoreItem */
+
+.user-item {
+  cursor: pointer;
+  padding-bottom: 0.5em;
+  font-size: 1.1em;
+
+  span {
+    margin: 2em;
+  }
+
+  &:hover {
+      background: rgb(239, 238, 238);
+    }
+}
+
+
+/* AddScores */
+
+.add-scores-conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 2em;
+  
+  div {
+    margin-bottom: 2em;
+  }
+}
+
+/* Form */
+
+.form-conatiner {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-top: 1em;
+  padding: 1em;
+
+  div {
+    margin-bottom: 1.5em;
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid lightgray;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.11em;
+
+    &::placeholder {
+      color: #333;
+      font-size: 12px;
+    }
+
+    &:focus {
+      outline: 0;
+      border-bottom: 1px solid lightseagreen;
+      transition: 0.6s all ease;
+    }
+  }
+}
+
+.form-error {
+  color: @danger-color-dark;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/* Flash Message */
+
+.flash {
+  z-index: 10;
+  position: fixed;
+  top: 5%;
+  left: 40%;
+  padding: 0.75em;
+  min-width: 300px;
+  height: fit-content;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.flash-success {
+  background-color: @success-color;
+  border: 1px solid @success-color-dark;
+}
+
+.flash-danger {
+  background-color: @danger-color;
+  border: 1px solid @danger-color-dark;
+}
+
+
+/* Other */
+
+.button {
+  margin: 1em auto;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: white;
+  background: @primary-color;
+  cursor: pointer;
+  &:hover {
+    background: @primary-color-lighter
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+
